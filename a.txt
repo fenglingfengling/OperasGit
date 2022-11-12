@@ -8,3 +8,13 @@ git config --global user.name "delicious" git config --global user.email "837788
 git commit  ctrl + i 插入编写模式  ESC  ZZ  保存模式 或者 ctrl+: :wq 等模式  git status   git log  esc + qq 退出模式
 
 modify a.txt 文件已经修改状态  
+有中文名字会出现乱码 1.文件名乱码 git config --global core.quotepath false
+2.cmder 编辑描述乱码 - 进入setting - 找到 environment - 添加：set LANG=zh_CN.UTF-8 saving setting 就可以了
+
+[master dc8cf21] 世界的云：：    
+ 5 files changed, 5 inserti
+ create mode 100644 .gitign
+ create mode 100644 1.txt  
+ create mode 100644 a1-1.tx
+ create mode 100644 ax.txt   ctrl i 世界的云： esc ctrl 
+ git add .  git commit -m '这里改动B的内容' git log git add .  
