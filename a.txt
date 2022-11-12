@@ -1,0 +1,5 @@
+git init - 初始化创建仓库
+	· 会创建出一个隐藏的.git文件夹，所有的操作历史将存入这里
+git status 查看目录文件状态
+Untracked 未追踪
+git add filename 管理文件  git commit 提交信息 要登录邮箱和名字
