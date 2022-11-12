@@ -1,5 +1,5 @@
 git init - 初始化创建仓库
-	· 会创建出一个隐藏的.git文件夹，所有的操作历史将存入这里
+	· 会创建出一个隐藏的.git文件夹，所有的操作历史将存入这   里
 git status 查看目录文件状态
 Untracked 未追踪
 git add filename 管理文件  git commit 提交信息 要登录邮箱和名字
@@ -13,7 +13,7 @@ modify a.txt 文件已经修改状态
 
 [master dc8cf21] 世界的云：：    
  5 files changed, 5 inserti
- create mode 100644 .gitign
+ create mode 100644 .gitign 
  create mode 100644 1.txt  
  create mode 100644 a1-1.tx
  create mode 100644 ax.txt   ctrl i 世界的云： esc ctrl 
