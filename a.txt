@@ -17,4 +17,10 @@ modify a.txt 文件已经修改状态
  create mode 100644 1.txt  
  create mode 100644 a1-1.tx
  create mode 100644 ax.txt   ctrl i 世界的云： esc ctrl 
- git add .  git commit -m '这里改动B的内容' git log git add .  
+ git add .  git commit -m '这里改动B的内容' 
+ git log
+ git add .  
+ git status  
+ git commit -a -m '这里改动了a.txt内容'  添加暂存区 提交仓库   git log  touch d.txt 
+ git status  git  commit -a -m '添加了d.txt文件  git add .   git commit -a -m '添加了d.txt文件'
+ git  log
