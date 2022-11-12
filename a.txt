@@ -8,3 +8,7 @@ git config --global user.name "delicious" git config --global user.email "837788
 git commit  ctrl + i 插入编写模式  ESC  ZZ  保存模式 或者 ctrl+: :wq 等模式  git status   git log  esc + qq 退出模式
 
  git commit -m '添加了所有文件  手动删除 d.txt   git status  出现乱码文件名中文 解决 git config --global core.quotepath false  Changes not staged for commit:   deleted:    d.txt 所以不可以提交  解决git rm a - 副本.txt 
+git rm d.txt rm 'd.txt' git status   (use "git restore --staged <file>..." to unstage) deleted:    d.txt Changes not staged for commit:   modified:   a.txt   git commit -m '删除了一个C文件'
+ git log  git status  touch 110.txt git rm 110.txt  git rm ax.txt   git status  git commit -m '删除了110.txt文件'  git log   touch 5.txt 6.txt 7.txt 8.txt 9.txt 10.txt 11.txt git add . git commit -m '再次提交不希望有11.txt'  git rm --cache 11.txt rm '11.txt' git status Untracked files:  11.txt (use "git restore --staged <file>..." to unstage) deleted: 11.txt 不小提到暂存区里面 使用取消命令--cache 	3. 删除Git仓库中的，保留工作目录中的文件 - git rm --cache <file>
+ 
+修改a1-1.txt内容 git status  modified: a1-1.txt Untracked files:  11.txt  git rm  a1-1.txt  git rm  -f a1-1.txt 留在工作目录中 git rm -f(force) <file> - 强制删除  git commit -m '删除了a1-1.txt 
