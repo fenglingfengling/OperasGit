@@ -13,3 +13,9 @@ git rm d.txt rm 'd.txt' git status   (use "git restore --staged <file>..." to un
  
 修改a1-1.txt内容 git status  modified: a1-1.txt Untracked files:  11.txt  git rm  a1-1.txt  git rm  -f a1-1.txt 留在工作目录中 git rm -f(force) <file> - 强制删除  git commit -m '删除了a1-1.txt 
 touch zm.txt1 git add . git commit -m '创建zm.txt1文件' mkdir first git mv zm.txt1 first/zm.txt1 git mv file_from file_to 1.重命名 1.重命名 mv file_from file_to git rm file_from git add file_to	
+git add t.txt git status -s git status -s AM r.txt A  t.txt ?? tytxt  short 符号 ?? 未追踪文件 A 添加到暂存区的 右 M 被修改但是未放入暂存区 MM 被修改后放入暂存区并且有再次修改 左M 被修改后放入暂存区 R 重命名文件 D 删除的文件
+git add r.tx   git commit -m '提交'  git status -s  git add tytxt  git  status -s AM tytxt提交暂存区并修改 git add .   git  status-s s  A  tytxt git commit -m '第二次提交'  git status -s  git status -s  M t.txt  git add .  
+git status -s M  t.txt   git  status -s  MM t.txt 暂存修改又修改   git add -s  git commit -m '第三次提交'    
+手动删除 d.txt  git status -s  D 6.txt  git rm 6.txt  git commit -m '删除提交'  mv t.txt tt.txt git  status -s v git mv tt.txt t.txt git status -s git mv t.txt tt.txt  git status -s  R  t.txt -> tt.txt  git  commit -m '提交修改名字'
+
+11 合并  checkout -b branch12
