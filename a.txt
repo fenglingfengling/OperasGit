@@ -12,6 +12,7 @@ git rm d.txt rm 'd.txt' git status   (use "git restore --staged <file>..." to un
  git log  git status  touch 110.txt git rm 110.txt  git rm ax.txt   git status  git commit -m '删除了110.txt文件'  git log   touch 5.txt 6.txt 7.txt 8.txt 9.txt 10.txt 11.txt git add . git commit -m '再次提交不希望有11.txt'  git rm --cache 11.txt rm '11.txt' git status Untracked files:  11.txt (use "git restore --staged <file>..." to unstage) deleted: 11.txt 不小提到暂存区里面 使用取消命令--cache 	3. 删除Git仓库中的，保留工作目录中的文件 - git rm --cache <file>
  
 
-存储： 当在一个分支中向暂存区添加内容，切换到另一个分支时，提交commit会带上另一分支中的暂存内容。 git stash 存储暂存区及工作目录修改文件 git stash -u 在上面的基础上带上未追踪文件 git stash list 打印所有存储内容 git stash apply <stashName> 将存储内容重新应用（默认不保留已暂存内容） git stash apply --index 将原暂存依旧以暂存进行取出 git stash drop 移除存储
-避免一个分支提交 把另一个分支的存储提交上去  场景添加暂存区时不希望这个文件添加 切换另一个分支提交再来提交
-修改了s.txt文件内容  git add .
+git进阶阶段 rebase变基 ： 和merge同样都是进行合并操作的。 将一个分支的内容都移至另一个分支上 工作流程： 1. 首先找到两个分支的共同祖先 2. 然后对比当前分支与祖先的历次提交，进行提取相应修改，并保存为临时文件，将当前分支指向目标基底，最后将之前存为临时文件的修改依序应用
+别名 有时候觉得常用的命令字母多了点，例如： git checkout 我们输入的时候，会花费很长的时间，那不如给它取个别名吧~ git config --global alias.co checkout ** 不是任何东西都可以取别名的，还需要熟悉命名规则，建议可以观看下命令行相关的视频：
+
+
