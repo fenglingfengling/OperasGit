@@ -35,4 +35,6 @@ git remote set-url origin https://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@githu
 最后提交 直接输入： git push      就不用输入账户和密码了。
 git remote set-url origin https://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@github.com/fenglingfengling/OperasGit.git
  git push -u origin master  选择manager-core 选择 Sign in With a Code 链接上面是验证码 复杂 点击链接进入 黏贴就可以了上传 点击Authorize GitCredentialManager
- 选择manager-core 点击select
+ 选择manager-core 点击select  上传前先 git pull一下
+
+ cd..   git clone https://github.com/fenglingfengling/OperasGit.git 克隆项目
