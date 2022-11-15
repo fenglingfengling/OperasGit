@@ -14,5 +14,25 @@ git rm d.txt rm 'd.txt' git status   (use "git restore --staged <file>..." to un
 
 git进阶阶段 rebase变基 ： 和merge同样都是进行合并操作的。 将一个分支的内容都移至另一个分支上 工作流程： 1. 首先找到两个分支的共同祖先 2. 然后对比当前分支与祖先的历次提交，进行提取相应修改，并保存为临时文件，将当前分支指向目标基底，最后将之前存为临时文件的修改依序应用
 别名 有时候觉得常用的命令字母多了点，例如： git checkout 我们输入的时候，会花费很长的时间，那不如给它取个别名吧~ git config --global alias.co checkout ** 不是任何东西都可以取别名的，还需要熟悉命名规则，建议可以观看下命令行相关的视频：
+git checkout branch3  git rebase master Successfully rebased and updated refs/heads/branch3 修改了tt.txt内容  git add . git commit -m 'branch3以master为基点'  git log --oneline --decorate --graph --all  * 14d8c9d (HEAD -> branch3) '以master为基点' * a08765c (master) 'rebase7' git checkout master git merge branch3  git log git log --oneline --decorate --graph --all 
 
+17 别名 有时候觉得常用的命令字母多了点，例如： git checkout 我们输入的时候，会花费很长的时间，那不如给它取个别名吧~ git config --global alias.co checkout ** 不是任何东西都可以取别名的，还需要熟悉命名规则，建议可以观看下命令行相关的视频： https://study.miaov.com/study/show/chapter/504
 
+多人合作模式 以防万一，我们把本地的仓库不小心删除，所以我们需要一个可以备份的地方，这个地方可以是我们的网盘，也可以是u盘，或者是类似于我们今天要用到的github。 但是u盘或网盘这类的存储方式虽然可以保存备份，却不能适用于多人的开发，如果我们想要多人的开发，就需要有一个中央仓库，可以给团队开发中的每个人下载并且使用。 中央仓库：存储每个成员的提交对象，共享提交对象给每个成员。
+
+配置忽略文件 我们会发现，有些时候我就是不希望git管理文件夹中的某个文件，每一次查看状态总是告诉我未追踪，很麻烦~ .gitignore 文件，列出忽略文本模式 # 该行都会被忽略 **  表示匹配任意中间目录 * 匹配零个或多个任意字符 ！ 忽略指定文件以外的文件或目录 [abc] 匹配任意一个在方括号内的字符  [0-9] 在这个范围的都可以匹配 ？只匹配一个任意字符
+远程仓库 创建远程仓库，仓库的名称默认origin，origin中有单独的master和HEAD指针，和本地仓库的HEAD或master并非一致。 git push 提交远程仓库 git clone 克隆项目到本地 git pull 拉取
+远程仓库的操作 远程仓库克隆分支： git checkout -b branch1 origin/branch1 ** 拉取下来的分支默认是master 删除远程仓库分支： git push origin :branch 推送标签到远程仓库： git push origin v1.0 git push origin --tags 删除远程仓库的标签： git push origin :refs/tags/v1.0
+git push -u origin master 我主分支是master 所以main改为master  git push -u origin master  选择 signed in code 账号密码登录  Username for 'https://github.com': 837788353@qq.com Password for 'https://837788353@qq.com@github.com':
+
+remote: Support for password authentication was removed on August 13, 2021. 根据提示，错误的原因是“对密码（password）身份验证的支持已于2021年8月13日删除。请改用个人访问令牌（token）。”
+
+2 解决方法 打开github进入setting https://github.com/settings/apps Personal access tokens  选择 的Token设置页面：https://github.com/settings/tokens，点击生成一个Token： 
+选择 Generate token  Token name ssa2   Expiration 设置为 Custom自定义  年月日 这里设置了 2023年 11月 15日   默认勾上 Public Repositories (read-only)  点击 Generate token 创建完成
+后续的设置可以根据自己需要选择，对于大部分用户来说勾上“repo”应该就够用了。 例如这个 创建Token成功后复制这个Token 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：
+例如：（全局设置某一个仓库的 token）以后每次提交都不需要账户和密码了  
+git remote set-url origin https://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@github.com/github的用户名/仓库名称
+最后提交 直接输入： git push      就不用输入账户和密码了。
+git remote set-url origin https://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@github.com/fenglingfengling/OperasGit.git
+ git push -u origin master  选择manager-core 选择 Sign in With a Code 链接上面是验证码 复杂 点击链接进入 黏贴就可以了上传 点击Authorize GitCredentialManager
+ 选择manager-core 点击select
